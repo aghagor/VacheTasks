@@ -3,6 +3,7 @@ package com.example.goro.weatherapp.helpers;
 import android.app.Application;
 import android.content.res.AssetManager;
 
+import com.example.goro.weatherapp.entity.ListJsonObject;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
@@ -60,7 +61,7 @@ public class CustomApplication extends Application {
         Collections.sort(messages, new Comparator<ListJsonObject>() {
             @Override
             public int compare(ListJsonObject listJsonObject, ListJsonObject nextlistJsonObject) {
-                return ListJsonObject.getName().compareToIgnoreCase(nextlistJsonObject.getName());
+                return listJsonObject.getName().compareToIgnoreCase(nextlistJsonObject.getName());
             }
         });
         return messages;

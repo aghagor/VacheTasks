@@ -4,6 +4,9 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 
+import com.example.goro.weatherapp.entity.DatabaseLocationObject;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,7 +23,7 @@ public class DatabaseQuery extends DatabaseObject {
     }
 
     public List<DatabaseLocationObject> getStoredDataLocations() {
-        List<DatabaseLocationObject> allLocations = new ArralList<DatabaseLocationObject>();
+        List<DatabaseLocationObject> allLocations = new ArrayList<DatabaseLocationObject>();
         String query = "Select * from data";
         Cursor cursor = this.getDbConnection().rawQuery(query, null);
         if (cursor.moveToFirst()) {
@@ -31,7 +34,7 @@ public class DatabaseQuery extends DatabaseObject {
                 System.out.println("Response number " + id);
                 String storedData = cursor.getString(cursor.getColumnIndexOrThrow("cotent"));
                 System.out.println("Response number " + storedData);
-                allLocations.add(new DatabaseLocationObject(id, storedData))
+                allLocations.add(new DatabaseLocationObject(id, storedData));
             } while (cursor.moveToNext());
         }
         cursor.close();

@@ -10,6 +10,7 @@ import android.widget.Filter;
 import android.widget.TextView;
 
 import com.example.goro.weatherapp.R;
+import com.example.goro.weatherapp.entity.ListJsonObject;
 
 import java.util.ArrayList;
 import java.util.Iterator;

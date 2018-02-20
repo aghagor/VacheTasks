@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.goro.weatherapp.R;
+import com.example.goro.weatherapp.entity.WeatherObject;
+
+import java.util.List;
 
 /**
  * Created by Goro on 20.02.2018.
@@ -17,6 +20,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder
     protected Context context;
 
     public RecyclerViewAdapter(Context context, List<WeatherObject> dailyWeather) {
+
         this.dailyWeather = dailyWeather;
         this.context = context;
     }

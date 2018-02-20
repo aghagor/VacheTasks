@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.v7.widget.ThemedSpinnerAdapter;
 
+import com.example.goro.weatherapp.entity.ListJsonObject;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 

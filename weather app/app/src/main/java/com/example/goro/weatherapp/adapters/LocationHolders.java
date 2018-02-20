@@ -7,8 +7,11 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.example.goro.weatherapp.R;
+import com.example.goro.weatherapp.entity.LocationObject;
 
 import org.w3c.dom.Text;
+
+import java.util.List;
 
 /**
  * Created by Goro on 20.02.2018.

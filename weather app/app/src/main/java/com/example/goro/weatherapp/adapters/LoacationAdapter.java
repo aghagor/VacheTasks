@@ -12,6 +12,9 @@ import android.widget.RadioButton;
 
 import com.example.goro.weatherapp.R;
 import com.example.goro.weatherapp.database.DatabaseQuery;
+import com.example.goro.weatherapp.entity.ListJsonObject;
+import com.example.goro.weatherapp.entity.LocationObject;
+import com.example.goro.weatherapp.entity.ViewEntityObject;
 import com.example.goro.weatherapp.helpers.CustomSharedPreference;
 
 import java.util.ArrayList;
@@ -29,7 +32,7 @@ public class LoacationAdapter extends RecyclerView.Adapter<LocationHolders> impl
     int[] idList = new int[]{R.id.button0, R.id.button1, R.id.button2, R.id.button3, R.id.button4};
     private CustomSharedPreference sharedPreference;
 
-    public LoacationAdapter(List<ListJsonObject> locationObjects, Context context) {
+    public LoacationAdapter(List<LocationObject> locationObjects, Context context) {
         this.locationObjects = locationObjects;
         this.context = context;
         allRadioButton = new ArrayList<ViewEntityObject>();
@@ -64,7 +67,7 @@ public class LoacationAdapter extends RecyclerView.Adapter<LocationHolders> impl
         System.out.println("Stored id " + buttonId);
         holder.selectableRadioButton.setOnCheckedChangeListener(this);
         setRadioButtonId(holder.selectableRadioButton, position);
-        allRadioButton.add(new ViewEntityObject(Holder.selectableRadioButton, locationObjects.get(position).getLocationCity()));
+        allRadioButton.add(new ViewEntityObject(holder.selectableRadioButton, locationObjects.get(position).getLocationCity()));
         String storedCityLocation = sharedPreference.getLocationInPreference();
         if (allRadioButton.get(position).getRadioName().equals(storedCityLocation)) {
             holder.selectableRadioButton.setChecked(true);
